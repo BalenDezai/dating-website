@@ -1,0 +1,25 @@
+
+.forms{
+    width: 51%; 
+    margin: 0 auto;
+}
+
+.forms input {
+    width: 50%;
+}
+
+.navbar-custom {
+    color: #FFFFFF;
+    background-color: #e8bad6;
+    margin-bottom: 40px;
+}
+
+.brand{
+    color: white;
+    font-size: 40px;
+    -webkit-text-stroke: 1px black;
+}
+.links{
+    color:white;
+    font-size: 20px;
+}

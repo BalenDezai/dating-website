@@ -1,0 +1,25 @@
+body {
+    background-color: #000;
+  }
+  
+#landing-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+    display: block;
+}
+  
+.fill-screen{
+    background-size:cover;
+    background-position: center;
+    background-image: url("../images/LandingImage.png");
+}
+
+#landing-header h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 60px;
+    color: white; /*#fb035a;*/
+    -webkit-text-stroke: 1.5px #0091FF;
+    
+}

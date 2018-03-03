@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to Essence Dating</h1>
+            <p>Find People that might make great partners to you!</p>
+        </div>
+    </header>
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>People we think might suit you</h3>
+        </div>
+    </div>
+    
+    <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+        <% profile.forEach(function(profile){ %>
+    
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img class="img-thumbnail" src="<%= profile.image %>">
+                <div class="caption">
+                <h4><%= profile.firstname %></h4>
+                <p> <a href="/profiles/<%= profile._id%>" class="btn btn-primary">More Info</a> </p>
+            </div>
+            </div>
+            
+            
+        </div>
+    
+    <% }); %>
+    </div>
+
+    </div>
+<% include ../partials/footer %>

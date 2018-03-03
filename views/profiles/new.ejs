@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row forms">
+            <form action="/profiles" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Firstname</label>
+                    <input class="form-control" type="text" name="Profile[firstname]" placeholder="Firstname" >
+                </div>
+                <div class="form-group">
+                    <label>Lastname</label>
+                    <input class="form-control" type="text" name="Profile[lastname]" placeholder="Lastname" >
+                </div>
+                <div class="form-group">
+                    <label>Date of birth</label>
+                    <input class="form-control" type="date" name="Profile[born]">
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select class="form-control">
+                        <option name="Profile[Male]">Male</option>
+                        <option name="Profile[Female]">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Profile Image</label>
+                    <input class="form-control" type="file" name="avatar">
+                </div>
+                <div class="form-group">
+                    <label>description of yourself</label>
+                    <textarea class="form-control" type="text" name="Profile[description]"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+    </div>
+</div>
+
+<% include ../partials/footer %>
