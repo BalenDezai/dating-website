@@ -1,24 +1,31 @@
 'use strict';
 
+
 var middlewereObject = {};
 
-middlewereObject.isLoggedIn = function isLoggedIn(req,res,next){
+
+middlewereObject.MustBeLoggedIn = function MustBeLoggedIn(req,res,next){
     
     if(req.isAuthenticated()){
         return next();
     }
-    res.redirect("/login");
+    res.redirect('/login');
 };
 
 
 middlewereObject.isAlreadyLoggedIn = function isAlreadyLoggedIn(req, res, next){
     
     if(req.isAuthenticated()){
-        //  TODO: ERROR HANDLE BETTER
-        return res.redirect("/profiles");
-    } else {
-        return next();
+        return res.redirect('/profiles');
     }
+    return next();
+};
+
+middlewereObject.MustHaveProfile = function MustHaveProfile(req, res, next){
+    if (!req.user.profile.id) {
+        return res.redirect('/profiles/new');
+    }
+    return next();
 };
 
 module.exports = middlewereObject;

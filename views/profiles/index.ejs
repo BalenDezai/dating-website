@@ -18,9 +18,9 @@
     
         <div class="col-md-3 col-sm-6">
             <div class="thumbnail">
-                <img class="img-thumbnail" src="<%= profile.image %>">
+                <img class="img-thumbnail" src="images/ProfilePictures/<%= profile.profileImage %>">
                 <div class="caption">
-                <h4><%= profile.firstname %></h4>
+                <h4><%= profile.firstname %> <%=profile.lastname %></h4>
                 <p> <a href="/profiles/<%= profile._id%>" class="btn btn-primary">More Info</a> </p>
             </div>
             </div>

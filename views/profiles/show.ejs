@@ -5,17 +5,16 @@
         
         <div class="col-md-9">
             <div class="thumbnail">
-                <img class="img-responsive" src="<%= profile.image %>">
-                <div class="caption-full"><h4 class="pull-right"><%= profile.firstname %></h4></div>
-                <h4><a><%= profile.lastname %></a></h4>
+                <img class="img-responsive" src="../images/ProfilePictures/<%= profile.profileImage %>">
+                <h4><a><%= profile.firstname %> <%= profile.lastname %></a></h4>
                 <p> <%= profile.description %></p>
-                <% if(currentUser && profile.owner.id.equals(currentUser._id)){ %>
-                <a class="btn btn-warning" href="/campgrounds/<%= profile._id%>/edit">Edit</a>
-                <form class="delete-form" action="/campgrounds/<%= profile._id %>?_method=DELETE" method="POST">
+                <% if(currentUser && profile._id.equals(currentUser.profile.id)){ %>
+                <a class="btn btn-warning" href="/profiles/<%= profile._id%>/edit">Edit</a>
+                <form class="delete-form" action="/profiles/<%= profile._id %>?_method=DELETE" method="POST">
                     <button class="btn btn-danger">Delete</button>
                 </form>
                 <% } %>
-            </div>
+            </div> 
         </div>
         
     </div>

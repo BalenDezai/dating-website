@@ -1,22 +1,16 @@
-var mongoose = require("mongoose")
+var mongoose = require('mongoose');
 
 // schema setup
 var profileSchema = new mongoose.Schema({
     firstname: String,
     lastname: String,
+    registered: Date,
     gender: String,
-    born: Date,
+    age: Number,
+    born: String,
     profileImage: String,
-    description: String,
-    owner: {
-        id: {
-            type:mongoose.Schema.Types.ObjectId,
-            ref: "User"
-        },
-        username: String  
-        
-    },
+    description: String
 });
 
 //  compile into a model
-module.exports = mongoose.model("Profile", profileSchema);
+module.exports = mongoose.model('Profile', profileSchema);

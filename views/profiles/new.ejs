@@ -5,30 +5,30 @@
             <form action="/profiles" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Firstname</label>
-                    <input class="form-control" type="text" name="Profile[firstname]" placeholder="Firstname" >
+                    <input class="form-control" type="text" name="firstname" placeholder="Firstname" >
                 </div>
                 <div class="form-group">
                     <label>Lastname</label>
-                    <input class="form-control" type="text" name="Profile[lastname]" placeholder="Lastname" >
+                    <input class="form-control" type="text" name="lastname" placeholder="Lastname" >
                 </div>
                 <div class="form-group">
                     <label>Date of birth</label>
-                    <input class="form-control" type="date" name="Profile[born]">
+                    <input class="form-control" type="date" name="born">
                 </div>
                 <div class="form-group">
                     <label>Gender</label>
-                    <select class="form-control">
-                        <option name="Profile[Male]">Male</option>
-                        <option name="Profile[Female]">Female</option>
+                    <select name="gender" class="form-control">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Profile Image</label>
-                    <input class="form-control" type="file" name="avatar">
+                    <input class="form-control" type="file" name="profileImage">
                 </div>
                 <div class="form-group">
                     <label>description of yourself</label>
-                    <textarea class="form-control" type="text" name="Profile[description]"></textarea>
+                    <textarea class="form-control" type="text" name="description"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Register</button>
             </form>
