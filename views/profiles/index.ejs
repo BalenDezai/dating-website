@@ -1,35 +1,85 @@
 <% include ../partials/header %>
 <div class="container">
-    <header class="jumbotron">
+    <header class="jumbotron testing">
         <div class="container">
-            <h1>Welcome to Essence Dating</h1>
-            <p>Find People that might make great partners to you!</p>
+            <h1><span class="headertext">Welcome to Essence Dating</span></h1>
+            <p class="headertext">Find People that might make great partners to you!</p>
         </div>
     </header>
     
-    <div class="row">
-        <div class="col-lg-12">
-            <h3>People we think might suit you</h3>
+    
+    <div class="jumbotron testing">
+        <div class="container">
+          
+          
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" id="peopleNearbyTab" class="active"><a role="tab" aria-controls="PeopleNearby" data-toggle="tab" href="#PeopleNearby">People Nearby</a></li>
+            <li role="presentation" id="registeredTab" ><a role="tab" aria-controls="Registered" data-toggle="tab" href="#Registered">Registered</a></li>
+          </ul>
         </div>
-    </div>
-    
-    <div class="row text-center" style="display: flex; flex-wrap: wrap;">
-        <% profile.forEach(function(profile){ %>
-    
-        <div class="col-md-3 col-sm-6">
-            <div class="thumbnail">
-                <img class="img-thumbnail" src="images/ProfilePictures/<%= profile.profileImage %>">
-                <div class="caption">
-                <h4><%= profile.firstname %> <%=profile.lastname %></h4>
-                <p> <a href="/profiles/<%= profile._id%>" class="btn btn-primary">More Info</a> </p>
-            </div>
+        
+        <div class="tab-content">
+            <div id="PeopleNearby" role="tabpanel" class="tab-pane fade in active">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="headertext">People who live near you</h3>
+                    </div>
+                </div>
+                <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                    <% nearbyProfile.forEach(function(profile, index){ %>
+                    <% if(index  <= 3){ %>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="thumbnail">
+                            <img id="localProfileImage_<%= index %>" class="img-fluid img-thumbnail imageResizing" alt="Responsive image" src="images/ProfilePictures/<%= profile.profileImage %>">
+                            <div class="caption">
+                            <h4 id="localProfileInformation_<%= index %>"><%= profile.firstname %> <%=profile.lastname %> <%= profile.age %> years old</h4>
+                            <p> <a id="localProfileLink_<%= index %>" href="/profiles/<%= profile._id%>" class="btn btn-primary">More Info</a> </p>
+                        </div>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% }); %>
+                </div>
+                <button id="ViewMoreLocal" class="btn btn-primary pull-right">View More</button>
             </div>
             
-            
+            <div id="Registered" role="tabpanel" class="tab-pane fade">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="headertext">People registered in our site</h3>
+                    </div>
+                </div>
+        
+                <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                    <% everyProfile.forEach(function(profile, index){ %>
+                    <% if(index  <= 3){ %>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="thumbnail">
+                            <img id="globalProfileImage_<%= index %>" class="imageResizing img-fluid img-thumbnail" alt="Responsive image"  height="100px" width="100px" src="images/ProfilePictures/<%= profile.profileImage %>">
+                            <div class="caption">
+                            <h4 id="globalProfileInformation_<%= index %>" class="" ><%= profile.firstname %> <%=profile.lastname %>, <%= profile.age %></h4>
+                            <p class=""> <a id="globalProfileLink_<%= index %>" href="/profiles/<%= profile._id%>" class="btn btn-primary">More Info</a> </p>
+                        </div>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% }); %>
+                </div>
+                <button id="ViewMoreGlobal" class="btn btn-primary pull-right">View More</button>
+                <div>
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination">
+                        <li class="page-item">Previous</li>
+                        <li class="page-item"></li>
+                        <li class="page-item"></li>
+                        <li class="page-item"></li>
+                        <li class="page-item"></li>
+                      </ul>
+                    </nav>
+                </div>
+                <button id="ViewBackGlobal" class="btn btn-primary pull-left">Go Back</button>
+            </div>
         </div>
-    
-    <% }); %>
     </div>
-
-    </div>
+</div>
 <% include ../partials/footer %>

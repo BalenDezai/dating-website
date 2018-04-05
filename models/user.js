@@ -10,8 +10,9 @@ var userSchema = new mongoose.Schema({
             type:mongoose.Schema.Types.ObjectId,
             ref: 'Profile'
         },
-        firstname: String
-        
+        firstname: String,
+        postalcode: String,
+        countrycode: String,
     },
 });
 

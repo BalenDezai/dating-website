@@ -1,9 +1,15 @@
-var mongoose = require('mongoose');
-
+const   mongoose            = require('mongoose'),
+        mongoosePaginate    = require('mongoose-paginate');
+        
 // schema setup
-var profileSchema = new mongoose.Schema({
+const profileSchema = new mongoose.Schema({
     firstname: String,
     lastname: String,
+    street: String,
+    city: String,
+    postalcode: String,
+    country: String,
+    countrycode: String,
     registered: Date,
     gender: String,
     age: Number,
@@ -11,6 +17,8 @@ var profileSchema = new mongoose.Schema({
     profileImage: String,
     description: String
 });
+
+profileSchema.plugin(mongoosePaginate);
 
 //  compile into a model
 module.exports = mongoose.model('Profile', profileSchema);

@@ -1,5 +1,26 @@
+html, body {
+    background-size:cover;
+    background-position: center;
+    background-image: url("../images/argh.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: auto !important;
+    overflow-x: hidden !important;
+}
 
-.forms{
+header {
+    padding-top: 20px;
+}
+
+.headertext {
+    color: white;
+}
+
+.testing {
+    background-color:rgba(55,9,55,0.6);
+}
+
+.forms {
     width: 51%; 
     margin: 0 auto;
 }
@@ -8,18 +29,102 @@
     width: 50%;
 }
 
-.navbar-custom {
-    color: #FFFFFF;
-    background-color: #e8bad6;
-    margin-bottom: 40px;
+.forms label {
+    color: white;
 }
 
-.brand{
+
+.navbar-custom {
+    /*color: #273d58;*/
+    /*background-color: #273d58;*/
+    color: #370937;
+    background-color: #370937;
+    margin-bottom: 40px;
+    border: 0;
+}
+
+.brand {
     color: white;
-    font-size: 40px;
+    font-size: 180%;
     -webkit-text-stroke: 1px black;
 }
-.links{
+
+.brand-logo {
+    position: relative;
+    z-index: 1;
+    left: 1px;
+    top: -30px;
+}
+
+.links {
     color:white;
     font-size: 20px;
+}
+
+.imageResizing {
+    min-height: 200px;
+    min-width: 200px;
+    height: 200px;
+    width: 200px;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.nav-tabs { 
+    border-bottom: 2px solid #DDD; 
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { 
+    border-width: 0;
+    background-color: transparent;
+}
+.nav-tabs > li > a { 
+    border: none; color: #666; 
+}
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover { 
+    border: none; color: #4285F4 !important; background: transparent; 
+}
+.nav-tabs > li > a::after { 
+    content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); 
+}
+.nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { 
+    transform: scale(1); 
+}
+.tab-nav > li > a::after { 
+    background: #21527d none repeat scroll 0% 0%; color: #fff; 
+}
+.tab-pane { 
+    padding: 15px 0; 
+}
+.tab-content{ 
+    padding:20px
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+    
+    
+    .brand-logo{
+        display:none;
+    }
+    
+    .brand{
+        position: absolute;
+        left: 10px;
+        color: white;
+        font-size: 180%;
+        -webkit-text-stroke: 1px black;
+        
+    }
+    
+    .forms{
+        width: 150%;
+        margin: 0 auto;
+    }
+    
+    .forms label {
+        font-size:100%;
+    }
+
+    
 }
