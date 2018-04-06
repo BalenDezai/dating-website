@@ -1,4 +1,4 @@
-function resize(){
+function resize() {
     document.querySelector(".fill-screen").setAttribute("style","height:" + window.innerHeight + "px");
 }
 

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "DEBUG=app node app.js",
-    "lint": "eslint routes/profiles.js"
+    "lint": "eslint app.js"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +32,7 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.10.0"
+    "eslint-plugin-import": "^2.10.0",
+    "nodemon": "^1.17.3"
   }
 }
